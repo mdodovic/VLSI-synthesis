@@ -1,2 +1,2 @@
-src/synthesis/modules/m21_dataflow.v
+src/synthesis/modules/reg8.v
 src/synthesis/DE0_TOP.v
