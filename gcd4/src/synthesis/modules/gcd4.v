@@ -20,6 +20,7 @@ module gcd4 (
 		out_next = out_reg;
 		i = 4'h0;
 		while (i <= a && i <= b) begin
+			// non-constant loop condition - ERROR!
 			if (a % i == 0 && b % i == 0)
 				out_next = i;
 			i = i + 1;
