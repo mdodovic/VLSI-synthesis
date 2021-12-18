@@ -191,7 +191,15 @@ module DE0_TOP (CLOCK_50,
     // ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == 
     //  Structural coding
     // ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == 
-    
-    m21_dataflow m21(.I0(SW[0]), .I1(SW[1]), .S0(~BUTTON[0]), .Y(LEDG[0]));
+
+    // CLOCK_50 - clock
+    // SW - switch
+    // BUTTON - button
+    // LEDG - led green dionde
+    // BUTTON = 0 => value = 1
+    // BUTTON = 1 => value = 0
+    // so we need to pass inverted value, this is due to cyclon3 board, 
+    // not verilog syntacs or anything else
+    reg8 reg8_inst(CLOCK_50, SW[9], ~BUTTON[0], SW[8], SW[7:0], LEDG[7:0]);
     
 endmodule
