@@ -192,6 +192,8 @@ module DE0_TOP (CLOCK_50,
     //  Structural coding
     // ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == 
     
-    m21_dataflow m21(.I0(SW[0]), .I1(SW[1]), .S0(~BUTTON[0]), .Y(LEDG[0]));
+    gcd4 gcd4_inst (
+        CLOCK_50, SW[9], SW[7:4], SW[3:0], LEDG[3:0]
+    );
     
 endmodule
