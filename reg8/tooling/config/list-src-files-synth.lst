@@ -1,2 +1,3 @@
 src/synthesis/modules/reg8.v
+src/synthesis/modules/red.v
 src/synthesis/DE0_TOP.v
