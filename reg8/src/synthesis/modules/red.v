@@ -19,8 +19,8 @@ module red (
             ff1_reg <= 1'b0;
             ff2_reg <= 1'b0;
         end else begin
-            ff1_reg <= ff2_next;
-            ff2_reg <= ff1_next;
+            ff1_reg <= ff1_next;
+            ff2_reg <= ff2_next;
 
         end
     end
