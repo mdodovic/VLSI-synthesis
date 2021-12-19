@@ -205,6 +205,8 @@ module DE0_TOP (CLOCK_50,
 
     red red_inst(CLOCK_50, SW[9], SW[8], SW8_red); // we need to use this for switch
     // in this case, we do not need to use red for button because button is allocated with load, so multiple loads are not problem
+    // SWITCH has another problem. 
+    // Bouncing can happened, we have middle period between two stable states (0 -> ... -> 1 or 1 -> ... -> 0, where ... represent middle state where we should not detect anything)
     reg8 reg8_inst(CLOCK_50, SW[9], ~BUTTON[0], SW8_red, SW[7:0], LEDG[7:0]);
     
 endmodule
