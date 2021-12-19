@@ -188,6 +188,8 @@ module DE0_TOP (CLOCK_50,
     //  REG/WIRE declarations
     // ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == 
     
+    wire SW8_red; // out from red
+
     // ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == 
     //  Structural coding
     // ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == 
@@ -200,6 +202,9 @@ module DE0_TOP (CLOCK_50,
     // BUTTON = 1 => value = 0
     // so we need to pass inverted value, this is due to cyclon3 board, 
     // not verilog syntacs or anything else
-    reg8 reg8_inst(CLOCK_50, SW[9], ~BUTTON[0], SW[8], SW[7:0], LEDG[7:0]);
+
+    red red_inst(CLOCK_50, SW[9], SW[8], SW8_red);
+
+    reg8 reg8_inst(CLOCK_50, SW[9], ~BUTTON[0], SW8_red, SW[7:0], LEDG[7:0]);
     
 endmodule
