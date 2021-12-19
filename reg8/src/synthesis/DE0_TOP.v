@@ -203,8 +203,8 @@ module DE0_TOP (CLOCK_50,
     // so we need to pass inverted value, this is due to cyclon3 board, 
     // not verilog syntacs or anything else
 
-    red red_inst(CLOCK_50, SW[9], SW[8], SW8_red);
-
+    red red_inst(CLOCK_50, SW[9], SW[8], SW8_red); // we need to use this for switch
+    // in this case, we do not need to use red for button because button is allocated with load, so multiple loads are not problem
     reg8 reg8_inst(CLOCK_50, SW[9], ~BUTTON[0], SW8_red, SW[7:0], LEDG[7:0]);
     
 endmodule
