@@ -1,2 +1,5 @@
-src/synthesis/modules/m21_dataflow.v
+src/synthesis/modules/reg4.v
+src/synthesis/modules/red.v
+src/synthesis/modules/deb.v
+src/synthesis/modules/hex.v
 src/synthesis/DE0_TOP.v
