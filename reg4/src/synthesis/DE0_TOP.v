@@ -187,11 +187,27 @@ module DE0_TOP (CLOCK_50,
     // ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == 
     //  REG/WIRE declarations
     // ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == 
-    
+
+    // HEX0_D 7seg need to be digit
+
+    wire BUTTON1_red; // for button Rising edge is only needed
+    wire [3:0] out_reg4; // output of register to be prepared for display
+    wire [6:0] out_hex; // output for display
+
+    // 4 x 7seg
+    // DP is decimal point - always shutdown
+    assign {HEX0_DP, HEX0_D} = {1'b1, out_hex};
+    // segments 3:1 are shut downed
+    assign {HEX3_DP, HEX3_D, HEX2_DP, HEX2_D, HEX1_DP, HEX1_D} = 24'hFFFFFF;
+
+
     // ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == 
     //  Structural coding
     // ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == 
-    
-    m21_dataflow m21(.I0(SW[0]), .I1(SW[1]), .S0(~BUTTON[0]), .Y(LEDG[0]));
+
+    red red_inst(CLOCK_50, SW[9], ~BUTTON[1], BUTTON1_red);
+    reg4 reg4_inst(CLOCK_50, SW[9], ~BUTTON[0], BUTTON1_red, SW[3:0], out_reg4);
+
+    hex hex_inst(out_reg4, out_hex);    
     
 endmodule
