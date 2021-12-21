@@ -198,9 +198,6 @@ module DE0_TOP (CLOCK_50,
     deb deb_inst(CLOCK_50, SW[9], SW[8], SW8_deb);
     red red_inst(CLOCK_50, SW[9], SW8_deb, SW8_red);
 
-    // regN reg_inst(CLOCK_50, SW[9], ~BUTTON[0], SW8_red, SW[7:0], LEDG[7:0]); // default width = 8
-    
-    regN #(.WIDTH(4'h8)) reg_inst(CLOCK_50, SW[9], ~BUTTON[0], SW8_red, SW[7:0], LEDG[7:0]);
-    // SW[7:0] has to be 7 not width, not parametrized
+    regN_fsm #(.WIDTH(4'h5)) reg_fsm_inst(CLOCK_50, SW[9], ~BUTTON[0], SW8_red, SW[4:0], LEDG[4:0]);
 
 endmodule
