@@ -188,10 +188,19 @@ module DE0_TOP (CLOCK_50,
     //  REG/WIRE declarations
     // ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == 
     
+    wire SW8_deb;
+    wire SW8_red;
+
     // ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == 
     //  Structural coding
     // ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == 
+
+    deb deb_inst(CLOCK_50, SW[9], SW[8], SW8_deb);
+    red red_inst(CLOCK_50, SW[9], SW8_deb, SW8_red);
+
+    // regN reg_inst(CLOCK_50, SW[9], ~BUTTON[0], SW8_red, SW[7:0], LEDG[7:0]); // default width = 8
     
-    m21_dataflow m21(.I0(SW[0]), .I1(SW[1]), .S0(~BUTTON[0]), .Y(LEDG[0]));
-    
+    regN #(.WIDTH(4'h8)) reg_inst(CLOCK_50, SW[9], ~BUTTON[0], SW8_red, SW[7:0], LEDG[7:0]);
+    // SW[7:0] has to be 7 not width, not parametrized
+
 endmodule
