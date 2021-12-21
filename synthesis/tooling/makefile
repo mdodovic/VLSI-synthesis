@@ -16,7 +16,7 @@ SIMUL_IS_QUESTA_USED = 0
 # C:\\questasim64_10.4c\\win64\\ 
 SIMUL_TOOL_EXE_DIR_PATH = C:\\altera\\13.0sp1\\modelsim_ase\\win32aloem\\
 
-SYNTH_TOP_LEVEL_MODULE = stavka_b
+SYNTH_TOP_LEVEL_MODULE = stavka_a
 # CycloneIII
 # CycloneV
 SYNTH_DEVICE_FAMILY = CycloneIII
