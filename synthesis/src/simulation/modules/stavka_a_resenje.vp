@@ -1,0 +1,23 @@
+`pragma protect begin_protected
+`pragma protect version = 1
+`pragma protect encrypt_agent = "Model Technology", encrypt_agent_info = "10.4c"
+`pragma protect data_method = "aes128-cbc"
+`pragma protect key_keyowner = "Mentor Graphics Corporation" , key_keyname = "MGC-VERIF-SIM-RSA-1" , key_method = "rsa"
+`pragma protect encoding = (enctype = "base64", line_length = 64, bytes = 128), key_block
+JiknVlmqpNoUIurPL6ejbRySDWBjfN6MwGgjtL42kJGjbSET6CjM2iVPIqmMtgZc
+7XJCYGIVy0/a5IUE4b8WVnBijIRixQIoBSF4iv6wWbT1Zvo6X4J0A1eGqK1NNO4w
+Ik+4MOy/Bh7eTO5X4vSAdO5AK4wDfvNcTsa1JiNBUy0=
+`pragma protect encoding = (enctype = "base64", line_length = 64, bytes = 560), data_block
+wFmf/LG2eEKXTfmvWXRjuYGXEsjObWGfJmRdpatSKmxeje97qRwgdtNUM+fzT9KI
+XtayazrxUvSOpwCEKtj0JtSG0Y86T8pNiCnWNBz03lnugan9TEsZzl2wHrqSsQv6
+8tlmCN7OXF8xo0PDaFERowQoAWgeB4geioAo6J/JYVe6S5kcJ7JCQnXjDrTTLHDC
+H5tBR7G1q6KnrLgTVLZ3EKM9sHqMMrfKY6E+Szug9vzd/55BUo3EsmypeQnmt7F4
+8Th0hbb2YPIgGz+X5dTfB8kuoN/QlpD3ScrGfwHD16oIL/Pso3whvxdVaY/k8hoB
+1griuWhnC/MAyfr8pAA3E5x19CM3iN8Y7C3aG/aWhPHlY87DIVLt8/pmkM+PbNQb
+VdDUJHXzu0707umtbAUZpz72/6WRTEQShLtARD9FpaDMFvUM7R0p7Ih9+EWALPtT
+OtRe9TvsfmtLccbUzHIP27pXFCkro2bH8fqPYZvZfAv60mCoiKGwQdMd3boLT6Ik
+nTBk2SvjdN88HTKNWEUGJcw0vElXJIMzyua2McCBvhbOgI9oU/9g0I4T7hvQllvk
+i0oMfTYdeGOIBKPtHIn0+Ph99/s2iXSXMUWnGrzUeudGVbGjqOO/416DAlir2A/K
+Q6yyhbt8fPzs3VoRqSSckTnEbHf/Xra7WnKHdbuMgtqzPkOSyUwQGi+BBdA0mMdB
+1DB2Ufh/hAXE9XME8gbRXNafj3XbGZos643ut/unzSY=
+`pragma protect end_protected
