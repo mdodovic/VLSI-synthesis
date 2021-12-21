@@ -198,6 +198,7 @@ module DE0_TOP (CLOCK_50,
     // ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == 
 
     timer timer_inst(CLOCK_50, SW[9], out_timer);
-    digits digits_inst(out_timer, HEX0_D, HEX1_D, HEX2_D, HEX3_D);
+    // digits digits_inst(out_timer, HEX0_D, HEX1_D, HEX2_D, HEX3_D);
+    digits_generate digits_generate_inst(out_timer, {HEX3_D, HEX2_D, HEX1_D, HEX0_D});
 
 endmodule
