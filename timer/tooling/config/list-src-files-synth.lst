@@ -1,4 +1,4 @@
-src/synthesis/modules/regN_fsm.v
-src/synthesis/modules/red.v
-src/synthesis/modules/deb.v
+src/synthesis/modules/timer.v
+src/synthesis/modules/hex.v
+src/synthesis/modules/digits.v
 src/synthesis/DE0_TOP.v

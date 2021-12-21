@@ -188,16 +188,16 @@ module DE0_TOP (CLOCK_50,
     //  REG/WIRE declarations
     // ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == 
     
-    wire SW8_deb;
-    wire SW8_red;
+    wire [9:0] out_timer;
+    assign LEDG = out_timer;
+
+    assign {HEX0_DP, HEX1_DP, HEX2_DP, HEX3_DP} = ~4'h0;
 
     // ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == 
     //  Structural coding
     // ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == 
 
-    deb deb_inst(CLOCK_50, SW[9], SW[8], SW8_deb);
-    red red_inst(CLOCK_50, SW[9], SW8_deb, SW8_red);
-
-    regN_fsm #(.WIDTH(4'h5)) reg_fsm_inst(CLOCK_50, SW[9], ~BUTTON[0], SW8_red, SW[4:0], LEDG[4:0]);
+    timer timer_inst(CLOCK_50, SW[9], out_timer);
+    digits digits_inst(out_timer, HEX0_D, HEX1_D, HEX2_D, HEX3_D);
 
 endmodule
