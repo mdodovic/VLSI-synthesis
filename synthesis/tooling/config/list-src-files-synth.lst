@@ -1,1 +1,2 @@
-src/synthesis/modules/stavka_b.v
+src/synthesis/modules/stavka_a.v
+src/synthesis/modules/stavka_c.v
