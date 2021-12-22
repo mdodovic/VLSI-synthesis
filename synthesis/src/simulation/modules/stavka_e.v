@@ -111,13 +111,17 @@ module stavka_e #(
                 if(counter_reg == NUM) begin
                     counter_next = 0; 
                     gcd_next = gcd_reg - 4'd1;
-                    if(gcd_next == 4'd0) begin
-                        current_state_next = setup;
-                        data_out_next = buffer_next[select];
-                    end
                 end else begin
                     counter_next = counter_reg + 1;
                 end
+
+                data_out_next = gcd_next;
+
+                if(gcd_reg == 4'd0) begin
+                    current_state_next = setup;
+                    data_out_next = buffer_next[select];
+                end
+
 
             end 
         endcase
