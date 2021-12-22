@@ -65,7 +65,7 @@ module stavka_d (
         gcd_next = gcd_reg;
         for (i = 0; i < 2; i = i + 1) begin
             buffer_next[i] = buffer_reg[i];
-            result_next[i] <= result_reg[i];
+            result_next[i] = result_reg[i];
         end
         j = 4'd0;
 
