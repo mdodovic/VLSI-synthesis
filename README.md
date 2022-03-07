@@ -1,3 +1,5 @@
 # VLSI-synthesis
 
-TBD
+Synthesis of hardware component base on its description made in Verilog.
+
+
